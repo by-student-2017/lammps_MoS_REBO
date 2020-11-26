@@ -24,8 +24,8 @@
 
 
 ## in.lmp
-  pair_style      rebomos
-  pair_coeff      * * MoS.REBO.set5b M S
+	pair_style      rebomos
+	pair_coeff      * * MoS.REBO.set5b M S
 
 ## References
 [1] https://research.matse.psu.edu/sinnott/software
