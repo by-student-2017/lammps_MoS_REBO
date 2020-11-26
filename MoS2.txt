@@ -1,12 +1,4 @@
 
-Å† Install (lammps)
-1. tar zxvf lammps-3Mar20.tar.gz
-2. cd lammps-3Mar20
-3. mkdir build
-4. cd build
-5. cmake -D BUILD_MPI=on -D PKG_USER-MEAMC=on -D PKG_MANYBODY=on -D PKG_MC=on ../cmake
-6. cmake --build .
-
 Å† MoS_REBO_fordistribution
 1. cd ~
 2. wget https://lammps.sandia.gov/tars/lammps-3Mar20.tar.gz
