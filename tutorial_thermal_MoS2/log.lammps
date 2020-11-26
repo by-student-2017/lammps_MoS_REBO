@@ -1,0 +1,66 @@
+LAMMPS (18 Jun 2019)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (../comm.cpp:88)
+  using 1 OpenMP thread(s) per MPI task
+#LAMMPS Input file
+# Title
+clear
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (../comm.cpp:88)
+  using 1 OpenMP thread(s) per MPI task
+
+# ----- condition settings -----
+
+variable    temp index 298.0 # K
+
+variable    pres index 1.0 # 0.1 MPa (bar units)
+
+# ----- thermal conductivity calculation settings-----
+# Sample LAMMPS input script for thermal conductivity
+units       metal
+variable    T equal ${temp}
+variable    T equal 298.0
+variable    V equal vol
+variable   dt equal 0.0010  # 1.0 fs
+variable    p equal 200     # correlation length
+variable    s equal 10      # sample interval
+variable    d equal $p*$s   # dump interval
+variable    d equal 200*$s   
+variable    d equal 200*10   
+
+# convert from LAMMPS real units to SI
+# metal units case
+variable    kB equal 1.3806504e-23    # [J/K] Boltzmann
+variable    eV2J equal 1.60218e-19 # eV to J (energy)
+variable    A2m equal 1.0e-10  # Angstrom to metol (length)
+variable    ps2s equal 1.0e-12 # ps to s (time)
+variable    convert equal ${eV2J}*${eV2J}/${ps2s}/${A2m}
+variable    convert equal 1.60218e-19*${eV2J}/${ps2s}/${A2m}
+variable    convert equal 1.60218e-19*1.60218e-19/${ps2s}/${A2m}
+variable    convert equal 1.60218e-19*1.60218e-19/1e-12/${A2m}
+variable    convert equal 1.60218e-19*1.60218e-19/1e-12/1e-10
+# real units case
+# variable    kB equal 1.3806504e-23    # [J/K] Boltzmann
+# variable    kCal2J equal 4186.0/6.02214e23 # Kcal/mol to J (energy)
+# variable    A2m equal 1.0e-10  # Angstrom to metol (length)
+# variable    fs2s equal 1.0e-15 # fs to s (time)
+# variable    convert equal ${kCal2J}*${kCal2J}/${fs2s}/${A2m}
+
+# setup problem
+atom_style   atomic
+dimension    3
+boundary     p p p
+read_data    data.in
+  triclinic box = (0 0 0) to (3.19032 2.76289 14.879) with tilt (-1.59516 0 0)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  6 atoms
+  read_data CPU = 0.00698519 secs
+replicate    4 4 1
+  triclinic box = (0 0 0) to (12.7613 11.0516 14.879) with tilt (-6.38063 0 0)
+  1 by 1 by 1 MPI processor grid
+  96 atoms
+  replicate CPU = 0.00398803 secs
+
+# ----- Potential settings (REBO)-----
+pair_style      rebomos
+ERROR: Unrecognized pair style 'rebomos' (../force.cpp:265)
+Last command: pair_style      rebomos
