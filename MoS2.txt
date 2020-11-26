@@ -1,5 +1,5 @@
 
-Å† MoS_REBO_fordistribution
+# MoS_REBO_fordistribution
 1. cd ~
 2. wget https://lammps.sandia.gov/tars/lammps-3Mar20.tar.gz
 3. tar zxvf lammps-3Mar20.tar.gz
@@ -15,9 +15,9 @@
 13. cmake -D BUILD_MPI=on -D PKG_USER-MEAMC=on -D PKG_MANYBODY=on -D PKG_MC=on ../cmake
 14. cmake --build .
 
-Å† in.lmp
+# in.lmp
   pair_style      rebomos
   pair_coeff      * * MoS.REBO.set5b M S
 
-Å† References
+# References
 [1] https://research.matse.psu.edu/sinnott/software
