@@ -8,7 +8,7 @@
 
 
 ## run (easy method) (elastic at any temperature)
-1. cd ~/lammps_MoS_REBO/utorial_elastic_Temp_MoS2
+1. cd lammps_MoS_REBO/utorial_elastic_Temp_MoS2
 2. chmod +x run.sh
 3. ./run.sh
 
