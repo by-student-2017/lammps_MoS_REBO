@@ -18,10 +18,15 @@
 14. cmake --build .
 
 
-## run
+## run (thermal conductivity)
 1. cd ~/lammps_MoS_REBO/tutorial_thermal_MoS2
 2. ~/lammps-3Mar20/build/lmp < in.lmp
 
+
+## run (elastic at any temperature)
+1. cd ~/lammps_MoS_REBO/utorial_elastic_Temp_MoS2
+2. ~/lammps-3Mar20/build/lmp < in.elastic
+3. python3 compliance_python3.py
 
 ## in.lmp
 	pair_style      rebomos
