@@ -4,7 +4,7 @@
 1. git clone https://github.com/by-student-2017/lammps_MoS_REBO.git
 2. cd lammps_MoS_REBO
 3. chmod +x install.sh
-4. ./run.sh
+4. ./install.sh
 
 
 ## run (easy method) (elastic at any temperature)
