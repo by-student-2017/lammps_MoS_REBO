@@ -1,7 +1,19 @@
 # lammps_MoS_REBO
 
+## install (easy method)
+1. git clone https://github.com/by-student-2017/lammps_MoS_REBO.git
+2. cd lammps_MoS_REBO
+3. chmod +x install.sh
+4. ./run.sh
 
-## MoS_REBO_fordistribution
+
+## run (easy method) (elastic at any temperature)
+1. cd ~/lammps_MoS_REBO/utorial_elastic_Temp_MoS2
+2. chmod +x run.sh
+3. ./run.sh
+
+
+## install (conventional method)
 1. cd ~
 2. wget https://lammps.sandia.gov/tars/lammps-3Mar20.tar.gz
 3. tar zxvf lammps-3Mar20.tar.gz
